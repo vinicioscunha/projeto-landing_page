@@ -7,18 +7,121 @@
     <title>
       Setor Apoio, Serviços e Qualidade - Conheça nossa equipe
     </title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> -->
     <meta name="description" content="Simple landind page" />
     <meta name="keywords" content="" />
     <meta name="author" content="" />
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
     <!--Replace with your tailwind.css once created-->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+    
     <!-- Define your gradient here - use online tools to find a gradient matching your branding-->
     <style>
+
+      html {
+        --background: white;
+        --primary: #00af41;
+        --line: black;
+      }
+
+      article {
+        font-family: Montserrat;
+        padding: 0.25rem 0.5rem 0 1rem;
+        background: var(--background);
+        color: blue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       
+      }
+
+      dl {
+        display: grid;
+        grid-auto-columns: -webkit-max-content;
+        grid-auto-columns: max-content;
+        grid-auto-flow: column;
+        grid-template-rows: auto auto;
+      }
+
+      dl .cell {
+        grid-column: span 2;
+        display: flex;
+        padding: 0 1rem;
+      }
+
+      dl .cell:nth-child(2) {
+        grid-column: span 3;
+        justify-content: flex-end;
+      }
+      dl .cell .cell-content {
+        display: inline-flex;
+        flex-direction: column;
+        border-left: 1px dashed var(--line);
+        position: relative;
+        background: var(--background);
+      }
+      dl .cell .cell-content::after {
+        content: "";
+        display: block;
+        background: var(--line);
+        height: 0.5rem;
+        width: 0.5rem;
+        position: absolute;
+        left: -0.25rem;
+        border-radius: 50%;
+      }
+      dl .cell .cell-content dt {
+        background: var(--background);
+        color: var(--primary);
+        padding-bottom: 0.25em;
+        position: relative;
+        left: -0.25rem;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
+      dl .cell .cell-content dd {
+        background: var(--background);
+        margin: 0;
+        position: relative;
+        left: -0.25rem;
+        color: blue;
+      }
+      dl .cell:nth-child(odd) .cell-content {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--line);
+      }
+      dl .cell:nth-child(odd) .cell-content::after {
+        bottom: -0.25rem;
+      }
+      dl .cell:nth-child(odd) .cell-content dd:last-child {
+        padding-bottom: 0.5rem;
+      }
+      dl .cell:nth-child(even) .cell-content {
+        padding-top: 1rem;
+        position: relative;
+        top: -1px;
+        border-top: 1px solid var(--line);
+      }
+      dl .cell:nth-child(even) .cell-content::after {
+        top: -0.25rem;
+      }
+      dl .cell:nth-child(even) .cell-content dt {
+        padding-top: 0.5rem;
+      }
+      dl .cell:nth-child(even) .cell-content dd {
+        flex-grow: 1;
+      }
+      dl .cell:last-child .cell-content {
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+      }
+      
       .gradient {
         background: linear-gradient(90deg, #280dda 0%, #daae51 100%);
       }
     </style>
+    
   </head>
   <body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
     <!--Nav-->
@@ -122,7 +225,7 @@
               Nossas atividades
             </h3>
             <p class="text-gray-600 mb-8">
-              Esta precisando de alguma informaçao? O setor de apoio é o principal canal de interaçao entre diretoria, escritorio, loja e farma; detentor de historico de indicadores relevantes para entendimento
+              Esta precisando de alguma informação? O setor de apoio é o principal canal de interaçao entre diretoria, escritorio, loja e farma; detentor de historico de indicadores relevantes para entendimento
               de parametros que influenciam na tomada de decisoes proporcionando o desmembramento de atividades a serem executadas. 
               <br />
               <br />
@@ -428,6 +531,84 @@
         </div>
       </div>
     </section>
+
+    <section class="bg-white border-b py-8">  
+      <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+        Linha do Tempo
+      </h1>
+      <div class="w-full mb-4">
+        <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+      </div>
+      <div>
+        <article>
+          <dl>
+            <div class="cell">
+              <div class="cell-content">
+                <dt>Sep 24</dt>
+                <dd>Cargo Ready    </dd>
+              </div>
+            </div>
+            <div class="cell">
+              <div class="cell-content">
+                <dt>Sep 25</dt>
+                <dd>Pickup Date</dd>
+              </div>
+            </div>
+            <div class="cell">
+              <div class="cell-content">
+                <dt>Oct 01</dt>
+                <dd>Cutoff Date</dd>
+              </div>
+            </div>
+            <div class="cell">
+              <div class="cell-content">
+                <dt>Oct 07</dt>
+                <dd>FMC Date</dd>
+              </div>
+            </div>
+            <div class="cell">
+              <div class="cell-content">
+                <dt>Oct 20</dt>
+                <dd>ATD</dd>
+                <dd>ETD</dd>
+              </div>
+            </div>
+            <div class="cell">
+              <div class="cell-content">
+                <dt>Nov 20</dt>
+                <dd>Est DSH</dd>
+                <dd>DSH</dd>
+              </div>
+            </div>
+            <div class="cell">
+              <div class="cell-content">
+                <dt>Nov 28</dt>
+                <dd>ETA Original</dd>
+              </div>
+            </div>
+            <div class="cell">
+              <div class="cell-content">
+                <dt>Dec 31</dt>
+                <dd>FMC End Date</dd>
+              </div>
+            </div>
+          </dl>
+        </article>
+
+      </div>
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
     <section class="bg-white border-b py-8">
       <div class="container mx-auto flex flex-wrap pt-4 pb-12">
         <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
@@ -607,6 +788,12 @@
         </g>
       </g>
     </svg>
+
+    
+
+
+
+
     <section class="container mx-auto text-center py-6 mb-12">
       <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-white">
         Entre em contato conosco!

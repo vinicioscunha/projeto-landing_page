@@ -1,0 +1,102 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900);
+html {
+  --background: #212226;
+  --primary: #00af41;
+  --line: #a6a7b5;
+}
+
+body {
+  background: var(--background);
+  font-family: Montserrat;
+  letter-spacing: 0.03em;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+article {
+  padding: 0.25rem 0.5rem 0 1rem;
+  background: var(--background);
+}
+
+dl {
+  display: grid;
+  grid-auto-columns: -webkit-max-content;
+  grid-auto-columns: max-content;
+  grid-auto-flow: column;
+  grid-template-rows: auto auto;
+}
+dl .cell {
+  grid-column: span 2;
+  display: flex;
+  padding: 0 1rem;
+}
+dl .cell:nth-child(2) {
+  grid-column: span 3;
+  justify-content: flex-end;
+}
+dl .cell .cell-content {
+  display: inline-flex;
+  flex-direction: column;
+  border-left: 1px dashed var(--line);
+  position: relative;
+  background: var(--background);
+}
+dl .cell .cell-content::after {
+  content: "";
+  display: block;
+  background: var(--line);
+  height: 0.5rem;
+  width: 0.5rem;
+  position: absolute;
+  left: -0.25rem;
+  border-radius: 50%;
+}
+dl .cell .cell-content dt {
+  background: var(--background);
+  color: var(--primary);
+  padding-bottom: 0.25em;
+  position: relative;
+  left: -0.25rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+dl .cell .cell-content dd {
+  background: var(--background);
+  margin: 0;
+  position: relative;
+  left: -0.25rem;
+  color: #f4f4f6;
+}
+dl .cell:nth-child(odd) .cell-content {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+dl .cell:nth-child(odd) .cell-content::after {
+  bottom: -0.25rem;
+}
+dl .cell:nth-child(odd) .cell-content dd:last-child {
+  padding-bottom: 0.5rem;
+}
+dl .cell:nth-child(even) .cell-content {
+  padding-top: 1rem;
+  position: relative;
+  top: -1px;
+  border-top: 1px solid var(--line);
+}
+dl .cell:nth-child(even) .cell-content::after {
+  top: -0.25rem;
+}
+dl .cell:nth-child(even) .cell-content dt {
+  padding-top: 0.5rem;
+}
+dl .cell:nth-child(even) .cell-content dd {
+  flex-grow: 1;
+}
+dl .cell:last-child .cell-content {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
